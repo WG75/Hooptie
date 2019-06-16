@@ -14,6 +14,7 @@
     "react/button-has-type": "off",
     "react/default-props-match-prop-types": "off",
     "react/require-default-props": "off",
+    "react/no-array-index-key": "off",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
