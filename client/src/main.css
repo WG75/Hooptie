@@ -1,0 +1,60 @@
+:root {
+  /*Colors*/
+  --primary-color: #ea7f28;
+  --primary-dark: #d37324;
+  --text-color: #4a4a4a;
+  --secondary-color: #ededed;
+
+  /*Breakpoints*/
+  --breakpoint-tiny: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1152px;
+  --breakpoint-xl: 1920px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #fff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*reusable classess*/
+
+.is-regular-large {
+  font-size: 18px;
+  font-weight: 400px;
+}
+
+.is-regular-small {
+  font-size: 12px;
+  font-weight: 400px;
+}
+.is-regular-meduim {
+  font-size: 12px;
+  font-weight: 400px;
+}
+
+.is-bold-large {
+  font-size: 32px;
+  font-weight: 700px;
+}
+
+.is-bold-meduim {
+  font-size: 18px;
+  font-weight: 700px;
+}
