@@ -23,6 +23,23 @@ ul {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active,
+button,
+button:focus {
+  outline: 0;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  text-decoration: none;
+  border-color: 0.3s ease-in-out;
+}
+
 body {
   background: #fff;
   min-height: 100vh;
@@ -45,7 +62,7 @@ body {
   font-weight: 400px;
 }
 .is-regular-meduim {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400px;
 }
 
