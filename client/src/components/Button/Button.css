@@ -1,48 +1,25 @@
 .button {
-  line-height: 52px;
-  min-height: 52px;
+  line-height: 32px;
+  min-height: 32px;
   font-size: 16px;
-  width: 166px;
-  border-radius: 25px;
-  text-transform: uppercase;
+  width: 128px;
+  border-radius: 5px;
+  text-transform: capitalize;
   text-align: center;
   cursor: pointer;
   transition: background 0.3s;
-  font-weight: bold;
-}
-
-.button:focus {
-  outline: none;
+  font-size: 18px;
+  border: 0px ;
+  padding: 0;
 }
 
 .button--is_primary {
-  background: var(--shade-of-blue);
-  color: var(--shade-of-black);
-  border: 2px solid var(--shade-of-black);
+  background: var(--primary-color);
+  color: #fff;
 }
 
-.button--is_inverted {
-  background: var(--shade-of-black);
-  color: var(--shade-of-blue);
-  border: 2px solid var(--shade-of-blue);
+
+.button--is_primary:active {
+  background: var(--primary-dark);
 }
 
-.button--is_inverted:hover {
-  background: var(--shade-of-blue);
-  color: var(--shade-of-black);
-  border: 2px solid var(--shade-of-black);
-}
-
-.button--is_primary:hover {
-  background: var(--shade-of-black);
-  border-color: var(--shade-of-blue);
-  color: var(--shade-of-blue);
-}
-
-.button--is_disabled,
-.button--is_disabled:hover {
-  background: darkgray;
-  border-color: darkgray;
-  color: var(--shade-of-black);
-  cursor: not-allowed;
-}

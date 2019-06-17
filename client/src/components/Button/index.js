@@ -4,56 +4,38 @@ import React, { type Node } from 'react';
 import { Link } from 'react-router-dom';
 import './Button.css';
 
-type props = {
+type Props = {
   className?: string,
   onClick?: () => void,
-  isLink?: boolean,
-  path?: string,
   children: Node,
   disabled?: boolean,
   type?: string,
   isPrimary?: boolean,
-  isSecondary?: boolean,
-  inverted?: boolean,
+  isSecondary?: boolean
 };
 
 const Button = ({
   className,
   onClick,
-  isLink,
-  path,
   children,
   disabled,
   type,
   isPrimary,
   isSecondary,
-  inverted,
-}: props) => (isLink ? (
-  <Link
-    className={`button ${isPrimary ? 'button--is_primary' : ''} ${
-      isSecondary ? 'button--is_secondary' : ''
-    }  isLink ${className || ''}`}
-    to={path || '/'}
-  >
-    {children}
-  </Link>
-) : (
+}: Props) => (
   <button
     disabled={disabled}
     className={`button ${isPrimary ? 'button--is_primary' : ''} ${
       isSecondary ? 'button--is_secondary' : ''
-    } ${disabled ? 'button--is_disabled' : ''} ${
-      inverted ? 'button--is_inverted' : ''
-    } ${className || ''}`}
+    } ${disabled ? 'button--is_disabled' : ''}  ${className || ''}`}
     onClick={onClick}
     type={type}
   >
     {children}
   </button>
-));
+);
 
 Button.defaultProps = {
-  isLink: false,
   disabled: false,
   isPrimary: true,
   type: 'button',
