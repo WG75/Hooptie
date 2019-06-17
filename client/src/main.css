@@ -27,6 +27,11 @@ img {
   max-width: 100%;
 }
 
+figure{
+  margin: 0;
+  padding: 0;
+}
+
 a,
 a:link,
 a:hover,
@@ -43,6 +48,7 @@ button:focus {
 
 body {
   background: #fff;
+  color: var(--text-color);
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -55,6 +61,7 @@ body {
   color: var(--primary-color);
   text-transform: capitalize;
   font-size: 14px;
+  display: inline-block;
 }
 
 .link:hover {
@@ -66,24 +73,24 @@ body {
 
 .is-regular-large {
   font-size: 18px;
-  font-weight: 400px;
+  font-weight: 400;
 }
 
 .is-regular-small {
   font-size: 12px;
-  font-weight: 400px;
+  font-weight: 400;
 }
 .is-regular-meduim {
   font-size: 14px;
-  font-weight: 400px;
+  font-weight: 400;
 }
 
 .is-bold-large {
   font-size: 32px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 .is-bold-meduim {
   font-size: 18px;
-  font-weight: 700px;
+  font-weight: 700;
 }
