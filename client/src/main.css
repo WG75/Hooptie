@@ -60,7 +60,7 @@ body {
 .link {
   color: var(--primary-color);
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 18px;
   display: inline-block;
 }
 

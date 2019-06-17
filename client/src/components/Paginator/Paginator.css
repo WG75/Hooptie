@@ -1,0 +1,8 @@
+.paginator {
+    display: flex;
+}
+
+.paginator__item {
+    margin: 12px;
+    font-size: 18px;
+}
