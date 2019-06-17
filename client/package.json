@@ -21,6 +21,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
+    "react-select": "^3.0.4",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
@@ -28,9 +29,6 @@
   "devDependencies": {
     "concurrently": "^4.0.1",
     "enzyme": "^3.7.0",
-    "reactotron-react-js": "^3.3.1",
-    "reactotron-redux": "^3.1.1",
-    "redux-devtools-extension": "^2.13.5",
     "enzyme-adapter-react-16": "^1.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-flowtype": "^2.50.3",
@@ -40,6 +38,9 @@
     "flow-bin": "^0.82.0",
     "prettier-eslint": "^8.8.2",
     "react-test-renderer": "^16.5.2",
+    "reactotron-react-js": "^3.3.1",
+    "reactotron-redux": "^3.1.1",
+    "redux-devtools-extension": "^2.13.5",
     "redux-mock-store": "^1.5.3",
     "stylelint": "^9.6.0",
     "stylelint-config-recommended": "^2.1.0"
