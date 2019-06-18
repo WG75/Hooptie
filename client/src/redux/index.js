@@ -1,9 +1,13 @@
 import { applyMiddleware, createStore, compose } from 'redux';
+import { createBrowserHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
+
 import thunk from 'redux-thunk';
 import Reactotron from '../config/Reactotron';
-import RootReducer from './reducers';
+import createRootReducer from './reducers';
 import api from '../api';
 
+export const history = createBrowserHistory();
 
 export default () => {
   const middlewares = [];
@@ -12,12 +16,14 @@ export default () => {
   const thunkMiddleware = thunk.withExtraArgument(api);
   middlewares.push(thunkMiddleware);
 
+  // router middleware
+  middlewares.push(routerMiddleware(history));
 
   let store;
   if (process.env.NODE_ENV === 'development') {
     // only use Reactotron debugger in DEV mode
     store = createStore(
-      RootReducer,
+      createRootReducer(history),
       compose(
         applyMiddleware(...middlewares),
         Reactotron.createEnhancer(),
@@ -25,7 +31,7 @@ export default () => {
     );
   } else {
     store = createStore(
-      RootReducer,
+      createRootReducer(history),
       applyMiddleware(...middlewares),
     );
   }

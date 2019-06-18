@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { Route, Switch } from 'react-router-dom';
+import { history } from '../../redux/index';
 
 import Home from '../../components/Home';
 
@@ -12,11 +13,11 @@ type State = void;
 class App extends React.Component<Props, State> {
   render() {
     return (
-      <BrowserRouter>
+      <ConnectedRouter history={history}>
         <Switch>
-          <Route exact path="/" component={() => <Home />} />
+          <Route exact path="/cars" component={Home} />
         </Switch>
-      </BrowserRouter>
+      </ConnectedRouter>
     );
   }
 }
