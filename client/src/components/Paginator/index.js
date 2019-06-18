@@ -8,35 +8,40 @@ type Props = {
   nextPage: number,
   prevPage: number,
   lastPage: number,
-  currentPage: number
+  currentPage: number,
+  onChange: (page: {page: number}) => void
 };
 
 const Paginator = ({
-  nextPage, prevPage, lastPage, currentPage,
+  nextPage,
+  prevPage,
+  lastPage,
+  currentPage,
+  onChange,
 }: Props) => (
   <ul className="paginator">
     <li className="paginator__item">
-      <Link className="link" to={`/cars/${1}`}>
+      <a className="link" onClick={() => onChange({ page: 1 })}>
         First
-      </Link>
+      </a>
     </li>
     <li className="paginator__item">
-      <Link className="link" to={`/cars/${prevPage}`}>
+      <a className="link" onClick={() => onChange({ page: prevPage })}>
         Previuos
-      </Link>
+      </a>
     </li>
     <li className="paginator__item">
       <span>{`Page ${currentPage} of ${lastPage}`}</span>
     </li>
     <li className="paginator__item">
-      <Link className="link" to={`/cars/${nextPage}`}>
+      <a className="link" onClick={() => onChange({ page: nextPage })}>
         Next
-      </Link>
+      </a>
     </li>
     <li className="paginator__item">
-      <Link className="link" to={`/cars/${lastPage}`}>
+      <a className="link" onClick={() => onChange({ page: lastPage })}>
         Last
-      </Link>
+      </a>
     </li>
   </ul>
 );

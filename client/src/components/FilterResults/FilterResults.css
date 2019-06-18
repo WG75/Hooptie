@@ -1,0 +1,19 @@
+.results__heading {
+  margin-top: 0;
+}
+
+.results__top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.results__top-right-container {
+  flex-basis: 300px;
+}
+
+.result__paginator {
+  display: flex;
+  justify-content: center;
+}

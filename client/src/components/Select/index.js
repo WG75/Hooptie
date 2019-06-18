@@ -4,38 +4,46 @@ import Select from 'react-select';
 import './Select.css';
 
 type Props = {
-  placeholder: string,
+  placeholder?: string,
   onChange: (value: string) => void,
   options: Array<{ label: string, value: string }>,
   withLabel?: boolean,
-  label?: string
+  label?: string,
+  defaultValue?: { label: string, value: string }
+  ,
+  className: string
 };
 
 type State = {
-  selectedOption: string
+  selectedOption: {label: string, value: string},
 };
 
 class SelectComponent extends React.Component<Props, State> {
-  state = {
-    selectedOption: '',
-  };
+  constructor(props: Props) {
+    super(props);
+    const { defaultValue } = this.props;
+    this.state = {
+      selectedOption: defaultValue || { label: '', value: '' }
+      ,
+    };
+  }
 
-  handleChange = (selectedOption: string): void => {
+  handleChange = (selectedOption: {label: string, value: string}): void => {
     const { onChange } = this.props;
     this.setState({ selectedOption });
     if (onChange) {
-      onChange(selectedOption);
+      onChange(selectedOption.value);
     }
   };
 
   render() {
     const { selectedOption } = this.state;
     const {
-      placeholder, options, withLabel, label,
+      placeholder, options, withLabel, label, className,
     } = this.props;
 
     return (
-      <div className="select-container">
+      <div className={`select-container ${className}`}>
         {withLabel && <span className="select-container__label">{label}</span>}
         <Select
           isSearchable={false}
