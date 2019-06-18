@@ -6,7 +6,7 @@ import FilterResultsComponent from '../../components/FilterResults';
 
 type Props = {
   cars: Array<Object>,
-  loading: Boolean,
+  loading: boolean,
   totalPages: number
 };
 
@@ -15,7 +15,7 @@ type State = void;
 class FilterResults extends React.Component<Props, State> {
   render() {
     const { cars, loading, totalPages } = this.props;
-    return <FilterResultsComponent cars={cars} loading={loading} totalPages={totalPages} loading />;
+    return <FilterResultsComponent cars={cars} loading={loading} totalPages={totalPages} />;
   }
 }
 

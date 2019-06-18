@@ -1,21 +1,23 @@
 /* ------------- Actions ------------- */
+import { push } from 'connected-react-router';
+
 const QUERY_CHANGE = 'Auto1/FilterCars/QUERY_CHANGE';
 const FETCH_CARS_REQUEST = 'Auto1/FilterCars/FETCH_CARS_REQUEST';
-const FETCH_CARS_SUCCESS = 'Auto1/FilterCars/FETCH_CARS_REQUEST';
-const FETCH_CARS_ERROR = 'Auto1/FilterCars/FETCH_CARS_REQUEST';
+const FETCH_CARS_SUCCESS = 'Auto1/FilterCars/FETCH_CARS_SUCCESS';
+const FETCH_CARS_ERROR = 'Auto1/FilterCars/FETCH_CARS_ERROR';
 
 /* ------------- initial state ------------- */
 const initialState = {
   query: {
-    color: 'All',
-    manufacture: 'All',
+    color: '',
+    manufacture: '',
     sort: null,
     page: 1,
   },
   currentPage: 1,
   nextPage: 2,
   prevPage: 1,
-  lastPage: 100,
+  lastPage: null,
   loading: false,
   error: false,
   cars: [],
@@ -39,6 +41,13 @@ export default function reducer(state = initialState, action = {}) {
         cars: action.payload.cars,
         loading: false,
         error: false,
+        currentPage: state.query.page,
+        nextPage:
+          state.query.page + 1 > action.payload.totalPageCount
+            ? action.payload.totalPageCount
+            : state.query.page + 1,
+        prevPage: state.query.page - 1 || 1,
+        lastPage: action.payload.totalPageCount,
       };
 
     default:
@@ -52,7 +61,7 @@ export function fetchCarsRequest() {
 }
 
 export function fetchCarsSuccess(cars) {
-  return { type: FETCH_CARS_SUCCESS, payload: { cars } };
+  return { type: FETCH_CARS_SUCCESS, payload: cars };
 }
 
 export function fetchCarsError(error) {
@@ -60,17 +69,31 @@ export function fetchCarsError(error) {
 }
 
 export function queryChange(query) {
-  return { type: QUERY_CHANGE, payload: { query } };
+  return {
+    type: QUERY_CHANGE,
+    payload: { query },
+  };
 }
 
 /* ------------- Thunks ------------- */
 export function fetchCars(query) {
   return async (dispatch, getState, api) => {
     try {
+      const {
+        page, color, sort, manufacturer,
+      } = query;
+
+      const url = `/cars?${`page=${page || 1}`}${
+        color ? `&color=${color}` : ''
+      }${manufacturer ? `&manufacturer=${manufacturer}` : ''}${
+        sort ? `&sort=${sort}` : ''
+      }`;
+
+      dispatch(queryChange({ ...query, page: parseInt(page, 10) }));
       dispatch(fetchCarsRequest());
       const results = await api.CarsModel.paginate(query);
-
       dispatch(fetchCarsSuccess(results));
+      dispatch(push(url));
     } catch (error) {
       dispatch(fetchCarsError(error));
     }

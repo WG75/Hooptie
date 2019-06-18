@@ -2,41 +2,46 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import qs from 'query-string';
 import Select from '../../components/Select';
-import { queryChange } from '../CarsFilter/CarsFilterRedux';
+import { fetchCars } from '../CarsFilter/CarsFilterRedux';
 
 type Props = {
-  onChange: (value: string) => void,
-  className: string
+  onChange: (value: Object) => void,
+  className: string,
+  query: Object
 };
 
-type State = void;
 
-class Sort extends React.Component<Props, State> {
-  render() {
-    const { onChange, className } = this.props;
-    return (
-      <Select
-        className={className}
-        onChange={onChange}
-        options={[
-          { label: 'Mileage - Ascending', value: 'Mileage - Ascending' },
-          { label: 'Mileage - Descending', value: 'Mileage - Descending' },
-        ]}
-        withLabel
-        label="sort by"
-      />
-    );
-  }
-}
+const Sort = ({ onChange, className, query }: Props) => (
+  <Select
+    defaultValue={
+      query.sort && {
+        label:
+          query.sort === 'asc' ? 'Mileage - Ascending' : 'Mileage - Descending',
+        value: query.sort,
+      }
+    }
+    className={className}
+    onChange={sort => onChange({ ...query, sort, page: 1 })}
+    options={[
+      { label: 'Mileage - Ascending', value: 'asc' },
+      { label: 'Mileage - Descending', value: 'des' },
+    ]}
+    withLabel
+    label="sort by"
+  />
+);
 
 function mapStateToProps(state: any) {
-  return {};
+  return {
+    query: qs.parse(state.router.location.search),
+  };
 }
 
 function mapDispatchToProps(dispatch: (() => any) => any) {
   return {
-    onChange: (sort: { sort: string }) => dispatch(queryChange({ sort })),
+    onChange: (query: Object) => dispatch(fetchCars(query)),
   };
 }
 

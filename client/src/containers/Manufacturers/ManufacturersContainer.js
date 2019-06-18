@@ -9,7 +9,8 @@ type Props = {
   onChange: (value: string) => void,
   manufacturers: Array<Object>,
   getManufacturers: () => void,
-  className: string
+  className: string,
+  defaultValue?: Object
 };
 
 type State = void;
@@ -24,7 +25,9 @@ class Manufactures extends React.Component<Props, State> {
   }
 
   render() {
-    const { onChange, manufacturers, className } = this.props;
+    const {
+      onChange, manufacturers, className, defaultValue,
+    } = this.props;
 
     return (
       <Select
@@ -33,7 +36,7 @@ class Manufactures extends React.Component<Props, State> {
         options={manufacturers}
         withLabel
         label="Manufacturer"
-        defaultValue={{ label: 'All', value: 'All' }}
+        defaultValue={defaultValue || { label: 'All', value: '' }}
       />
     );
   }

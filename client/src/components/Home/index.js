@@ -9,11 +9,11 @@ import logo from '../../assets/logo.png';
 
 import './Home.css';
 
-export default ({ match, location }: { match: Object }) => (
+export default () => (
   <section className="home-page">
     <Header logo={logo} links={['Purchase', 'My Orders', 'Sell']} />
     <main className="home-page__main-content">
-      <CarsFilter location={location} match={match} />
+      <CarsFilter />
     </main>
     <Footer />
   </section>

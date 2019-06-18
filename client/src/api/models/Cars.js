@@ -11,7 +11,11 @@ export const paginate = async (query) => {
       page, color, manufacturer, sort,
     } = query;
     const result = await request({
-      url: `/cars?page=${page}&color=${color}&manufacturer=${manufacturer}&sort=${sort}`,
+      url: `/cars?${page ? `page=${page}&` : ''}${
+        color ? `color=${color}&` : ''
+      }${manufacturer ? `manufacturer=${manufacturer}&` : ''}${
+        sort ? `sort=${sort}` : ''
+      }`,
     });
     if (result) {
       return result;

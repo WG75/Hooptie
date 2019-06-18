@@ -2,29 +2,33 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import qs from 'query-string';
 import FiltersComponent from '../../components/Filters';
-import { queryChange } from '../CarsFilter/CarsFilterRedux';
+import { fetchCars } from '../CarsFilter/CarsFilterRedux';
 
 type Props = {
-  onChange: (value: Object) => void
+  onChange: (value: Object) => void,
+  query: Object
 };
 
 type State = void;
 
 class Filters extends React.Component<Props, State> {
   render() {
-    const { onChange } = this.props;
-    return <FiltersComponent onChange={onChange} />;
+    const { onChange, query } = this.props;
+    return <FiltersComponent query={query} onChange={onChange} />;
   }
 }
 
 function mapStateToProps(state: any) {
-  return {};
+  return {
+    query: qs.parse(state.router.location.search),
+  };
 }
 
 function mapDispatchToProps(dispatch: (() => any) => any) {
   return {
-    onChange: (filters: { color: string, manufacturer: string }) => dispatch(queryChange(filters)),
+    onChange: (query: Object) => dispatch(fetchCars(query)),
   };
 }
 

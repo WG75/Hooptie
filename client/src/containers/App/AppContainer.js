@@ -10,12 +10,13 @@ import Home from '../../components/Home';
 
 type Props = void;
 type State = void;
+
 class App extends React.Component<Props, State> {
   render() {
     return (
       <ConnectedRouter history={history}>
         <Switch>
-          <Route exact path="/cars" component={Home} />
+          <Route exact path="/cars/" component={Home} />
         </Switch>
       </ConnectedRouter>
     );

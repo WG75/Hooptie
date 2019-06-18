@@ -9,7 +9,8 @@ type Props = {
   onChange: (value: string) => void,
   colors: Array<Object>,
   getColors: () => void,
-  className: string
+  className: string,
+  defaultValue?: Object
 };
 
 type State = void;
@@ -24,7 +25,9 @@ class Colors extends React.Component<Props, State> {
   }
 
   render() {
-    const { onChange, colors, className } = this.props;
+    const {
+      onChange, colors, className, defaultValue,
+    } = this.props;
 
     return (
       <Select
@@ -33,7 +36,7 @@ class Colors extends React.Component<Props, State> {
         options={colors}
         withLabel
         label="color"
-        defaultValue={{ label: 'All', value: 'All' }}
+        defaultValue={defaultValue || { label: 'All', value: '' }}
       />
     );
   }

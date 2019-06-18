@@ -2,23 +2,23 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import qs from 'query-string';
 import CarsFilterComponent from '../../components/CarsFilter';
 import { fetchCars } from './CarsFilterRedux';
 
 type Props = {
   loadCars: (query: Object) => void,
-  query: { page: Number, manufacturer: string, color: string, sort: string }
+  query: { page: number, manufacturer: string, color: string, sort: string }
 };
 type State = void;
 
 class CarsFilter extends React.Component<Props, State> {
   componentDidMount() {
-    const { loadCars } = this.props;
+    const { loadCars, query } = this.props;
 
-    loadCars();
+    loadCars(query);
   }
 
-  componentWillReceiveProps() {}
 
   render() {
     return <CarsFilterComponent />;
@@ -27,7 +27,7 @@ class CarsFilter extends React.Component<Props, State> {
 
 function mapStateToProps(state: any) {
   return {
-    query: state.filter.query,
+    query: qs.parse(state.router.location.search),
   };
 }
 

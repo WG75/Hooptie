@@ -2,15 +2,17 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import qs from 'query-string';
 import PaginatorComponent from '../../components/Paginator';
-import { queryChange } from '../CarsFilter/CarsFilterRedux';
+import { fetchCars } from '../CarsFilter/CarsFilterRedux';
 
 type Props = {
-  onChange: (Object) => void,
+  onChange: Object => void,
   nextPage: number,
   prevPage: number,
   lastPage: number,
   currentPage: number,
+  query: Object
 };
 
 type State = void;
@@ -27,12 +29,13 @@ function mapStateToProps(state: Object) {
     prevPage: state.filter.prevPage,
     lastPage: state.filter.lastPage,
     currentPage: state.filter.currentPage,
+    query: qs.parse(state.router.location.search),
   };
 }
 
 function mapDispatchToProps(dispatch: (() => any) => any) {
   return {
-    onChange: (page: { page: string }) => dispatch(queryChange(page)),
+    onChange: (query: Object) => dispatch(fetchCars(query)),
   };
 }
 

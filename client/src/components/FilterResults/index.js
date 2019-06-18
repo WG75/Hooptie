@@ -23,7 +23,7 @@ const FilterResults = ({ cars, loading, totalPages }: Props) => (
       <div className="results__top-left-container">
         <h1 className="results__heading is-bold-medium">Available cars</h1>
         <span className="results__summary is-regular-large">
-          {`Showing 10 of ${totalPages} results`}
+          {`Showing 10 of ${totalPages * 10} results`}
         </span>
       </div>
 
