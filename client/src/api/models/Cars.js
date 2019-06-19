@@ -25,3 +25,22 @@ export const paginate = async (query) => {
     throw error;
   }
 };
+
+/** ****************************************
+ * @async
+ * @description Loads car
+ * @returns {object} car
+ */
+export const getOne = async (carId) => {
+  try {
+    const result = await request({
+      url: `/cars/${carId}`,
+    });
+    if (result) {
+      return result;
+    }
+    throw result;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -35,7 +35,7 @@ const CarItem = ({ item }: Props) => (item ? (
         </span>
       </div>
 
-      <Link className="cart-item__link link" to="/car">view details</Link>
+      <Link className="cart-item__link link" to={`/cars/${item.stockNumber}`}>view details</Link>
 
 
     </div>

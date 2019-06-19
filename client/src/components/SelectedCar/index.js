@@ -8,8 +8,8 @@ type Props = {
   isLoading: boolean
 };
 
-const Favourites = ({ car, isLoading }: Props) => (
-  !isLoading ? (
+const Favourites = ({ car, isLoading }: Props) => !console.log(isLoading) && (
+  !isLoading && car ? (
     <div className="selected-car">
       <h1 className="selected-car__heading is-bold-large">{car.manufacturerName}</h1>
       <span className="cart-item__info is-regular-large">

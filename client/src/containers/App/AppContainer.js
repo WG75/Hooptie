@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route, Switch } from 'react-router-dom';
 import { history } from '../../redux/index';
-
+import carPage from '../../components/CarPage';
 import Home from '../../components/Home';
 
 type Props = void;
@@ -16,7 +16,9 @@ class App extends React.Component<Props, State> {
     return (
       <ConnectedRouter history={history}>
         <Switch>
-          <Route exact path="/cars/" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/cars" component={Home} />
+          <Route exact path="/cars/:id" component={carPage} />
         </Switch>
       </ConnectedRouter>
     );
