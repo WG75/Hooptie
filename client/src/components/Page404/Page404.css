@@ -1,0 +1,25 @@
+.not-found {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+.not-found__link {
+  display: inline-block;
+}
+
+.not-found__logo {
+  width: 200px;
+}
+
+.not-found__text {
+  margin: 12px 0;
+  display: block;
+}
+
+.not-found__link {
+  margin-left: 8px;
+}
