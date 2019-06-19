@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component it matches the snapshot 1`] = `
+<div
+  className="selected-car"
+>
+  <h1
+    className="selected-car__heading is-bold-large"
+  >
+    BMW
+  </h1>
+  <span
+    className="cart-item__info is-regular-large"
+  >
+    Stock # 10293 - 123.501 KM - Diesel - yellow
+  </span>
+  <p
+    className="selected-car__about-paragraph is-regular-medium"
+  >
+    This car is currently available and can be delivered as soon as tomorrow morning. Please be aware that delivery times shown in this page are not definitive and may change due to bad weather conditions.
+  </p>
+</div>
+`;

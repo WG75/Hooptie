@@ -47,7 +47,7 @@ class SelectComponent extends React.Component<Props, State> {
         {withLabel && <span className="select-container__label">{label}</span>}
         <Select
           isSearchable={false}
-          placeholder={"placeholder || 'None'"}
+          placeholder={placeholder || 'None'}
           className="react-select-container"
           classNamePrefix="react-select"
           value={selectedOption}
