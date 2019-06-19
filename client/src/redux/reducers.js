@@ -3,16 +3,18 @@ import { connectRouter } from 'connected-react-router';
 import appReducer from '../containers/App/AppRedux';
 import filterCarsReducer from '../containers/CarsFilter/CarsFilterRedux';
 import colorsReducer from '../containers/Colors/ColorsRedux';
-import ManufacturersReducer from '../containers/Manufacturers/ManufacturersRedux';
-import SelectedCarReducer from '../containers/SelectedCar/SelectedCarRedux';
+import manufacturersReducer from '../containers/Manufacturers/ManufacturersRedux';
+import selectedCarReducer from '../containers/SelectedCar/SelectedCarRedux';
+import favouritesReducer from '../containers/Favourites/FavouritesRedux';
 import reducerPersistor from '../config/reducerPersistor';
 
 
 export default history => combineReducers({
   router: connectRouter(history),
-  global: reducerPersistor(appReducer),
+  // global: reducerPersistor(appReducer),
   filter: filterCarsReducer,
   colors: colorsReducer,
-  selectedCar: SelectedCarReducer,
-  manufacturers: ManufacturersReducer,
+  selectedCar: selectedCarReducer,
+  manufacturers: manufacturersReducer,
+  favourites: reducerPersistor(favouritesReducer),
 });

@@ -19,7 +19,7 @@ const Favourites = ({ isSaved, onRemove, onSave }: Props) => (
           you want to remove it click the button below.
         </p>
 
-        <Button onClick={onRemove}>remove</Button>
+        <Button className="favourites__button" onClick={onRemove}>remove</Button>
       </div>
     ) : (
       <div className="favourites__wrapper">
