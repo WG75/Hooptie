@@ -14,7 +14,7 @@ export default () => (
     <Header logo={logo} links={['Purchase', 'My Orders', 'Sell']} />
 
     <main className="page__main-content">
-      <div className="page__jumpotran" />
+      <div className="page__jumbotron" />
 
       <article className="page__content-wrapper">
         <SelectedCar />

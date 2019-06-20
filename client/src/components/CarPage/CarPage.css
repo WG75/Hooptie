@@ -7,7 +7,7 @@
     flex: 1;
 }
 
-.page__jumpotran {
+.page__jumbotron {
     width: 100%;
     height: 360px;
     background: var(--secondary-color)

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import createStore from './redux';
-import App from './containers/App/AppContainer';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import 'normalize.css/normalize.css';
 import './main.css';

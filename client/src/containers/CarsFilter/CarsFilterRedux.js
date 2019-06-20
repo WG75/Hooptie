@@ -89,7 +89,7 @@ export function fetchCars(query) {
         sort ? `&sort=${sort}` : ''
       }`;
 
-      dispatch(queryChange({ ...query, page: parseInt(page, 10) }));
+      dispatch(queryChange({ ...query, page: parseInt(page, 10) || 1 }));
       dispatch(fetchCarsRequest());
       const results = await api.CarsModel.paginate(query);
       dispatch(fetchCarsSuccess(results));

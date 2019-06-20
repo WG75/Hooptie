@@ -6,22 +6,6 @@ import qs from 'query-string';
 import PaginatorComponent from '../../components/Paginator';
 import { fetchCars } from '../CarsFilter/CarsFilterRedux';
 
-type Props = {
-  onChange: Object => void,
-  nextPage: number,
-  prevPage: number,
-  lastPage: number,
-  currentPage: number,
-  query: Object
-};
-
-type State = void;
-
-class Paginator extends React.Component<Props, State> {
-  render() {
-    return <PaginatorComponent {...this.props} />;
-  }
-}
 
 function mapStateToProps(state: Object) {
   return {
@@ -42,4 +26,4 @@ function mapDispatchToProps(dispatch: (() => any) => any) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Paginator);
+)(PaginatorComponent);

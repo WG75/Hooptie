@@ -14,7 +14,8 @@ type Props = {
   onSave: (carId: string) => void,
   onRemove: (carId: string) => void,
   searchCollection: (carId: string) => void,
-  isSaved: boolean
+  isSaved: boolean,
+  car: Object
 };
 
 class Favourites extends React.Component<Props, State> {

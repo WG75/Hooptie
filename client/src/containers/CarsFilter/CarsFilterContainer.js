@@ -10,6 +10,7 @@ type Props = {
   loadCars: (query: Object) => void,
   query: { page: number, manufacturer: string, color: string, sort: string }
 };
+
 type State = void;
 
 class CarsFilter extends React.Component<Props, State> {
@@ -18,7 +19,6 @@ class CarsFilter extends React.Component<Props, State> {
 
     loadCars(query);
   }
-
 
   render() {
     return <CarsFilterComponent />;
