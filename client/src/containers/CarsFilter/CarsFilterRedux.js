@@ -1,13 +1,13 @@
 /* ------------- Actions ------------- */
 import { push } from 'connected-react-router';
 
-const QUERY_CHANGE = 'Auto1/FilterCars/QUERY_CHANGE';
-const FETCH_CARS_REQUEST = 'Auto1/FilterCars/FETCH_CARS_REQUEST';
-const FETCH_CARS_SUCCESS = 'Auto1/FilterCars/FETCH_CARS_SUCCESS';
-const FETCH_CARS_ERROR = 'Auto1/FilterCars/FETCH_CARS_ERROR';
+export const QUERY_CHANGE = 'Auto1/FilterCars/QUERY_CHANGE';
+export const FETCH_CARS_REQUEST = 'Auto1/FilterCars/FETCH_CARS_REQUEST';
+export const FETCH_CARS_SUCCESS = 'Auto1/FilterCars/FETCH_CARS_SUCCESS';
+export const FETCH_CARS_ERROR = 'Auto1/FilterCars/FETCH_CARS_ERROR';
 
 /* ------------- initial state ------------- */
-const initialState = {
+export const initialState = {
   query: {
     color: '',
     manufacture: '',

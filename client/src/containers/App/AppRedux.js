@@ -1,7 +1,7 @@
 /* ------------- Actions ------------- */
-const APP_STARTED_REQUEST = 'Auto1/App/APP_STARTED_REQUEST';
-const APP_STARTED_SUCCESS = 'Auto1/App/APP_STARTED_SUCCESS';
-const APP_STARTED_ERROR = 'Auto1/App/APP_STARTED_ERROR';
+export const APP_STARTED_REQUEST = 'Auto1/App/APP_STARTED_REQUEST';
+export const APP_STARTED_SUCCESS = 'Auto1/App/APP_STARTED_SUCCESS';
+export const APP_STARTED_ERROR = 'Auto1/App/APP_STARTED_ERROR';
 
 /* ------------- initial state ------------- */
 const initialState = {
@@ -36,21 +36,4 @@ export function appStartedSuccess() {
 
 export function appStartedError(error) {
   return { type: APP_STARTED_ERROR, payload: { error } };
-}
-
-export function queryChange(query) {
-  return { type: 'queryChange', query };
-}
-
-/* ------------- Thunks ------------- */
-export function appStarted() {
-  return async (dispatch, getState, api) => {
-    try {
-      dispatch(appStartedRequest());
-
-      dispatch(appStartedSuccess());
-    } catch (error) {
-      dispatch(appStartedError(error));
-    }
-  };
 }
