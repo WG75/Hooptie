@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  flex: 1 1 0;
 }
 
 .header__logo-container {
@@ -22,4 +23,17 @@
 
 .header__nav-link:hover {
   color: var(--primary-color);
+}
+
+/*Rules*/
+
+@media screen and (max-width: 480px) {
+  .header__logo-container {
+    width: 100px;
+  }
+
+  .header__nav-link {
+    margin: 8px;
+    font-size: 14px;
+  }
 }

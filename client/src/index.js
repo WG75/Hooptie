@@ -1,3 +1,6 @@
+import 'normalize.css/normalize.css';
+import './main.css';
+
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -6,12 +9,11 @@ import { persistStore } from 'redux-persist';
 import createStore from './redux';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import 'normalize.css/normalize.css';
-import './main.css';
 
 // Clear Reactotron on every app refresh
-if (process.env.NODE_ENV === 'development')
-  {console.tron && console.tron.clear();} //eslint-disable-line
+if (process.env.NODE_ENV === 'development') {
+  console.tron && console.tron.clear();
+} //eslint-disable-line
 
 // Create our redux store
 const store = createStore();

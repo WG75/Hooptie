@@ -6,7 +6,7 @@ import CarsFilter from '../../containers/CarsFilter/CarsFilterContainer';
 import Footer from '../Footer';
 import logo from '../../assets/logo.png';
 
-import './Home.css';
+import './CarsPage.css';
 
 export default () => (
   <section className="page">

@@ -7,13 +7,27 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+
 }
 
 .results__top-right-container {
-  flex-basis: 300px;
+  min-width: 300px;
 }
 
 .result__paginator {
   display: flex;
   justify-content: center;
+}
+
+/*Rules*/
+
+@media screen and (max-width: 1152px) {
+  .results__top-container {
+    flex-direction: column
+  }
+
+  .results__top-right-container {
+    margin: 24px 0;
+    width: 100%;
+  }
 }

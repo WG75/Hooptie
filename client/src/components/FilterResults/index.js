@@ -12,11 +12,6 @@ type Props = {
   totalPages: number
 };
 
-type State = {
-  color: string,
-  manufacture: string
-};
-
 const FilterResults = ({ cars, loading, totalPages }: Props) => (
   <section className="results">
     <div className="results__top-container">

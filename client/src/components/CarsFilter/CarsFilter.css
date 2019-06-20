@@ -13,3 +13,18 @@
 .cars-filter__right-container {
   flex: 1;
 }
+
+
+/*Rules*/
+
+@media screen and (max-width: 768px) {
+  .cars-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .results__top-right-container {
+    margin: 24px 0;
+    width: 100%;
+  }
+}
