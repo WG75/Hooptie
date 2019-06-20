@@ -13,10 +13,12 @@ type Props = {
   location: Object,
   onSave: (carId: string) => void,
   onRemove: (carId: string) => void,
-  searchCollection: (carId: string) => void,
+  searchCollection: (carId: number) => void,
   isSaved: boolean,
   car: Object
 };
+
+type State = void;
 
 class Favourites extends React.Component<Props, State> {
   componentDidMount() {
@@ -53,7 +55,7 @@ function mapDispatchToProps(dispatch: (() => any) => any) {
   return {
     onSave: (carId: string) => dispatch(saveToCollection(carId)),
     onRemove: (carId: string) => dispatch(removeFromCollection(carId)),
-    searchCollection: (carId: string) => dispatch(searchInCollection(carId)),
+    searchCollection: (carId: number) => dispatch(searchInCollection(carId)),
   };
 }
 

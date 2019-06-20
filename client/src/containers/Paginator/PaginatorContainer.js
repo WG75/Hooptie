@@ -1,6 +1,5 @@
 // @flow
 
-import React from 'react';
 import { connect } from 'react-redux';
 import qs from 'query-string';
 import PaginatorComponent from '../../components/Paginator';

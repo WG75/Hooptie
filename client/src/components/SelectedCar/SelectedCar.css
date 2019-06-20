@@ -1,3 +1,45 @@
 .selected-car {
-    margin: 0 24px;
+  margin: 0 24px;
+  flex: 1;
+}
+
+/*loading modifier when results are loading */
+
+.selected-car--is-loading .selected-car__heading,
+.selected-car--is-loading .cart-item__info,
+.selected-car--is-loading .selected-car__about-paragraph {
+  position: relative;
+  overflow: hidden;
+  color: var(--secondary-color);
+  background: var(--secondary-color);
+  margin: 8px 0;
+}
+
+.selected-car--is-loading .selected-car__heading::after,
+.selected-car--is-loading .cart-item__info::after,
+.selected-car--is-loading .selected-car__about-paragraph::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  animation: loading 1s infinite alternate-reverse;
+  background: lightgrey;
+}
+
+.selected-car--is-loading .selected-car__heading {
+  width: 90%;
+  height: 20px;
+}
+
+.selected-car--is-loading .cart-item__info {
+  width: 90%;
+  height: 15px;
+}
+
+.selected-car--is-loading .selected-car__about-paragraph {
+    width: 90%;
+    height: 100px;
+  
 }

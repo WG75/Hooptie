@@ -28,8 +28,8 @@ const FilterResults = ({ cars, loading, totalPages }: Props) => (
     </div>
 
     <div className="results__container">
-      {!loading && cars.length > 0 && cars.map(car => <CarItem item={car} />)}
-      {loading && [...Array(10)].map(i => <CarItemLoading key={i} />)}
+      {!loading && cars.length > 0 && cars.map((car, i) => <CarItem key={i} item={car} />)}
+      {loading && [...Array(10)].map((index, i) => <CarItemLoading key={i} />)}
     </div>
 
     <div className="result__paginator">

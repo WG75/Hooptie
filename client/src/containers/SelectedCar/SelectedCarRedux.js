@@ -1,10 +1,10 @@
 /* ------------- Actions ------------- */
-const FETCH_CAR_REQUEST = 'Auto1/SelectedCar/FETCH_CAR_REQUEST';
-const FETCH_CAR_ERROR = 'Auto1/SelectedCar/FETCH_CAR_ERROR';
-const FETCH_CAR_SUCCESS = 'Auto1/SelectedCar/FETCH_CAR_SUCCESS';
+export const FETCH_CAR_REQUEST = 'Auto1/SelectedCar/FETCH_CAR_REQUEST';
+export const FETCH_CAR_ERROR = 'Auto1/SelectedCar/FETCH_CAR_ERROR';
+export const FETCH_CAR_SUCCESS = 'Auto1/SelectedCar/FETCH_CAR_SUCCESS';
 
 /* ------------- initial state ------------- */
-const initialState = {
+export const initialState = {
   car: null,
   loading: true,
   error: false,
@@ -46,6 +46,7 @@ export function fetchCarError(error) {
 export function fetchCar(carId) {
   return async (dispatch, getState, api) => {
     try {
+      dispatch(fetchCarRequest());
       const result = await api.CarsModel.getOne(carId);
 
       dispatch(fetchCarSuccess(result));

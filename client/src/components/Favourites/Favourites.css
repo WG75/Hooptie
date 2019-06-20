@@ -2,6 +2,7 @@
     padding: 24px;
     border: 1px solid var(--secondary-color);
     margin: 0 24px;
+    flex: 1;
 }
 
 .favourites__button {

@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Paginator.css';
 
 type Props = {

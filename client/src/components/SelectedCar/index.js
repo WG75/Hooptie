@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import SelectedCarLoading from './SelectedCarLoading';
 import './SelectedCar.css';
 
 type Props = {
@@ -27,6 +28,6 @@ const SelectedCar = ({ car, isLoading }: Props) => !console.log(isLoading) && (
       definitive and may change due to bad weather conditions.
       </p>
     </div>
-  ) : 'loading.........'
+  ) : <SelectedCarLoading />
 );
 export default SelectedCar;
