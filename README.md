@@ -12,4 +12,3 @@ yarn start
 
  - The application has filtering, sorting and pagination functionality. it also handles client side routing using React-router so we can examine closely how the data flow with each technique mentioned above.
  
- - I am also planning to rebuild it using other frameworks like Vue, angular and backbone.
